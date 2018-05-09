@@ -1,0 +1,35 @@
+<h2>Burger Time!!</h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+      <h4>Not devoured</h4>
+        <ul>
+          {{#each burgerGet}}
+            {{#unless devoured}}
+              <li>{{burger_name}} <span><a href="#" class="badge badge-light devour" data-burgerID={{id}}>Devour!</a></span></li>
+            {{/unless}}
+          {{/each}}
+        </ul>
+    </div>
+    <div class="col text-center">
+    <h4>Devoured</h4>
+      <ul>
+        {{#each burgerGet}}
+          {{#if devoured}}
+            <li>{{burger_name}}</li>
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>
+
+<h4>Add a Burger</h2>
+<form>
+  <div class="form-group">
+    <textarea class="form-control w-50 p-3 mx-auto" id="burgerText" rows="3" name="burgerInfo"></textarea>
+  </div>
+
+  <button type="submit" id="addBurger" class="btn btn-light">Add Burger</button>
+</form>
